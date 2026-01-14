@@ -1,0 +1,26 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<IntDir>$(ProjectDir)target\$(Configuration)\</IntDir>
+		<OutDir>$(ProjectDir)target\$(Configuration)\</OutDir>
+
+		<!-- デバッグ → コマンド -->
+		<LocalDebuggerCommand>$(ProjectDir)target\$(Configuration)\$(ProjectName).exe</LocalDebuggerCommand>
+
+		<!-- デバッグ → 作業ディレクトリ -->
+		<LocalDebuggerWorkingDirectory>$(ProjectDir)target\$(Configuration)\</LocalDebuggerWorkingDirectory>
+
+		<!-- Cargo build -->
+		<NMakeBuildCommandLine>cargo build</NMakeBuildCommandLine>
+
+		<!-- Cargo clean -->
+		<NMakeCleanCommandLine>cargo clean</NMakeCleanCommandLine>
+
+		<!-- Cargo rebuild -->
+		<NMakeReBuildCommandLine>cargo clean &amp;&amp;cargo build</NMakeReBuildCommandLine>
+
+		<!-- デバッガが実行ファイルを探す場所 -->
+		<NMakeOutput>$(ProjectDir)target\$(Configuration)\$(ProjectName).exe</NMakeOutput>
+	</PropertyGroup>
+
+</Project>
